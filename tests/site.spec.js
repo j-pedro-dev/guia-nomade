@@ -65,3 +65,20 @@ test('no celular, a barra de compra aparece ao rolar', async ({ page, isMobile }
   await page.mouse.wheel(0, 1500)
   await expect(barra).toBeVisible()
 })
+
+test('cabeçalhos de segurança estão ativos', async ({ request }) => {
+  const resposta = await request.get('/')
+  const h = resposta.headers()
+  expect(h['content-security-policy']).toContain("default-src 'self'")
+  expect(h['x-frame-options']).toBe('DENY')
+  expect(h['x-content-type-options']).toBe('nosniff')
+  expect(h['strict-transport-security']).toContain('max-age=')
+})
+
+test('link externo abre em nova aba com proteção', async ({ page }) => {
+  const externos = await page.locator('a[target="_blank"]').evaluateAll((links) => links.map((a) => a.rel))
+  for (const rel of externos) {
+    expect(rel).toContain('noopener')
+    expect(rel).toContain('noreferrer')
+  }
+})

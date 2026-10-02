@@ -48,6 +48,7 @@ guia-nomade/
 ├── docs/TEMA.md               # Tema visual: cores, fontes e regras de design
 ├── tests/site.spec.js         # Testes automáticos (Playwright)
 ├── playwright.config.js
+├── vercel.json                # Cabeçalhos de segurança e cache na Vercel
 ├── index.html                 # HTML base, título da aba e tags de compartilhamento (SEO)
 ├── public/                    # Arquivos servidos como estão
 │   ├── favicon.svg            # Ícone da aba
@@ -111,6 +112,17 @@ Todos os botões de compra, a barra do celular e o card de oferta passam a usar 
 **Cores e fontes:** em `tailwind.config.js`, explicadas em `docs/TEMA.md`. O degradê dos botões e títulos fica em `src/index.css` (`.bg-sunset` e `.text-sunset`).
 
 **Ordem das seções:** em `src/App.jsx`. Para tirar uma seção, apague a linha dela.
+
+## Segurança
+
+O site é estático (não tem servidor, banco de dados nem formulário), então não há dados de visitantes para vazar. Mesmo assim:
+
+- `vercel.json` liga cabeçalhos de segurança em produção: CSP (só carrega scripts do próprio site e fontes do Google), HTTPS obrigatório (HSTS), bloqueio de exibição dentro de outros sites (contra clickjacking), `nosniff`, `Referrer-Policy` e `Permissions-Policy` bloqueando câmera, microfone e localização.
+- Links externos abrem em nova aba com `rel="noopener noreferrer"`.
+- Dependências sem vulnerabilidades conhecidas (`npm audit`).
+- Os testes (`npm test`) rodam o site com os mesmos cabeçalhos da produção e conferem que estão ativos.
+
+Se um dia adicionar um script de fora (Pixel da Meta, Google Analytics, chat), inclua o domínio dele no `Content-Security-Policy` do `vercel.json`, senão ele será bloqueado.
 
 ## Publicar na Vercel
 

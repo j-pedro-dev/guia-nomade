@@ -7,6 +7,10 @@ Origem: [ComposioHQ/awesome-claude-skills](https://github.com/ComposioHQ/awesome
 A pasta `composio-skills` do original (832 integrações com apps como Gmail e Slack) ficou de fora
 porque não tem relação com o site.
 
+Por segurança, também foram removidas as skills que enviam dados para serviços externos
+(`connect`, `connect-apps`, `connect-apps-plugin`, `skill-share` e `developer-growth-analysis`,
+que mandam conteúdo para Slack ou conectam contas via Composio).
+
 ## Skills aplicadas no site
 
 | Skill | Como foi usada |
