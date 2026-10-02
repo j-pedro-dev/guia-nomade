@@ -4,18 +4,27 @@ import { surgir } from '../../lib/animacoes'
 import Secao from '../ui/Secao'
 import fotoParis from '../../assets/lucas-paris.jpg'
 
-/** Grade em mosaico: um card grande com foto e seis benefícios. */
+/** Grade em mosaico: um card grande com foto (Paris) e seis benefícios. */
 export default function Beneficios() {
   return (
     <Secao id="metodo" rotulo="O que muda" titulo="Seu escritório cabe numa mochila.">
       <div className="grid grid-cols-2 gap-3 sm:gap-4 md:grid-cols-3">
-        <motion.div {...surgir()} className="card relative col-span-2 flex min-h-[240px] flex-col justify-end overflow-hidden p-6 sm:min-h-[280px] sm:p-8 md:col-span-1 md:row-span-3">
-          <img src={fotoParis} alt="" className="absolute inset-0 h-full w-full object-cover object-[center_35%] opacity-60" />
-          <div className="absolute inset-0 bg-gradient-to-t from-night via-night/70 to-transparent" />
-          <p className="relative font-display text-xl font-bold leading-snug sm:text-2xl">
-            Um notebook, internet e uma habilidade que o mercado paga.
-          </p>
-          <p className="relative mt-3 text-mist">É só disso que você precisa para trabalhar de qualquer lugar.</p>
+        {/* Foto inteira e nítida em cima, texto embaixo em fundo sólido (nada por cima da foto) */}
+        <motion.div {...surgir()} className="card col-span-2 flex flex-col overflow-hidden md:col-span-1 md:row-span-3">
+          <div className="relative aspect-[4/3] md:aspect-auto md:min-h-[260px] md:flex-1">
+            <img
+              src={fotoParis}
+              alt="Lucas Melo em frente à Torre Eiffel iluminada, em Paris"
+              loading="lazy"
+              className="absolute inset-0 h-full w-full object-cover object-[center_70%]"
+            />
+          </div>
+          <div className="p-6 sm:p-8">
+            <p className="font-display text-xl font-bold leading-snug sm:text-2xl">
+              Um notebook, internet e uma habilidade que o mercado paga.
+            </p>
+            <p className="mt-3 text-mist">É só disso que você precisa para trabalhar de qualquer lugar.</p>
+          </div>
         </motion.div>
 
         {BENEFICIOS.map(({ icone: Icone, titulo, texto }, i) => (
