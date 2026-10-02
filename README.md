@@ -31,10 +31,23 @@ npm run preview        # abre a versão de produção localmente para conferir
 npm run build:arquivo  # gera um único index.html em dist-arquivo/ (bom para mandar uma prévia)
 ```
 
+### Testes automáticos
+
+Feitos com [Playwright](https://playwright.dev), testam o site no computador e no celular: carrega sem erros, fotos carregam e estão nítidas, botões de compra apontam para o lugar certo, página não arrasta para os lados, dúvidas abrem e a barra de compra do celular aparece.
+
+```bash
+npx playwright install chromium   # só na primeira vez
+npm test
+```
+
 ## Estrutura do projeto
 
 ```
 guia-nomade/
+├── .claude/skills/            # Skills do Claude (awesome-claude-skills); veja .claude/skills/README.md
+├── docs/TEMA.md               # Tema visual: cores, fontes e regras de design
+├── tests/site.spec.js         # Testes automáticos (Playwright)
+├── playwright.config.js
 ├── index.html                 # HTML base, título da aba e tags de compartilhamento (SEO)
 ├── public/                    # Arquivos servidos como estão
 │   ├── favicon.svg            # Ícone da aba
@@ -51,9 +64,9 @@ guia-nomade/
 │   ├── lib/
 │   │   └── animacoes.js       # Animação padrão de entrada
 │   ├── assets/
-│   │   ├── lucas-barco.jpg    # Foto do topo (Hero)
-│   │   ├── lucas-paris.jpg    # Fundo do card "Seu escritório cabe numa mochila"
-│   │   └── lucas-brasil.jpg   # Foto da seção do autor
+│   │   ├── lucas-barco.webp   # Foto do topo (+ versão @2x para telas retina)
+│   │   ├── lucas-paris.webp   # Foto do card "Seu escritório cabe numa mochila"
+│   │   └── lucas-brasil.webp  # Foto da seção do autor
 │   └── components/
 │       ├── Cabecalho.jsx      # Barra de navegação do topo
 │       ├── BarraMobile.jsx    # Barra fixa com preço no celular
@@ -93,9 +106,9 @@ Todos os botões de compra, a barra do celular e o card de oferta passam a usar 
 
 **Textos:** todos ficam em `src/data/conteudo.js`, separados por seção (`HERO`, `DORES`, `BENEFICIOS`, `MODULOS`, `FAQ` etc.). Os títulos de "Conteúdo" contam os módulos e bônus automaticamente.
 
-**Fotos do Lucas:** ficam em `src/assets/` (`lucas-barco.jpg` no topo, `lucas-paris.jpg` no card de benefícios, `lucas-brasil.jpg` na seção do autor). Substitua por outra imagem com o mesmo nome. Para o link compartilhado, troque também `public/og-image.jpg` (ideal: 1200×630).
+**Fotos do Lucas:** ficam em `src/assets/` em WebP, cada uma com uma versão `@2x` para telas retina (`lucas-barco` no topo, `lucas-paris` no card de benefícios, `lucas-brasil` na seção do autor). Para trocar, substitua as duas versões mantendo os nomes. As fotos devem aparecer sempre nítidas: sem escurecer e sem texto por cima (veja `docs/TEMA.md`). Para o link compartilhado, troque também `public/og-image.jpg` (ideal: 1200×630).
 
-**Cores e fontes:** em `tailwind.config.js`. O degradê dos botões e títulos fica em `src/index.css` (`.bg-sunset` e `.text-sunset`).
+**Cores e fontes:** em `tailwind.config.js`, explicadas em `docs/TEMA.md`. O degradê dos botões e títulos fica em `src/index.css` (`.bg-sunset` e `.text-sunset`).
 
 **Ordem das seções:** em `src/App.jsx`. Para tirar uma seção, apague a linha dela.
 

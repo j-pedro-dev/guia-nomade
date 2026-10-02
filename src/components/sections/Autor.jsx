@@ -5,7 +5,8 @@ import { PRODUTO } from '../../config/site'
 import { surgir } from '../../lib/animacoes'
 import Secao from '../ui/Secao'
 import Rotulo from '../ui/Rotulo'
-import fotoAutor from '../../assets/lucas-brasil.jpg'
+import fotoAutor from '../../assets/lucas-brasil.webp'
+import fotoAutor2x from '../../assets/lucas-brasil@2x.webp'
 
 /** Apresentação de quem escreveu o ebook. */
 export default function Autor() {
@@ -14,6 +15,7 @@ export default function Autor() {
       <motion.div {...surgir()} className="card grid items-center gap-6 p-6 sm:gap-10 sm:p-12 md:grid-cols-[260px_1fr]">
         <img
           src={fotoAutor}
+          srcSet={`${fotoAutor} 1x, ${fotoAutor2x} 2x`}
           alt={PRODUTO.autor}
           loading="lazy"
           className="aspect-square w-28 rounded-full object-cover object-[center_25%] sm:w-full sm:max-w-[260px] sm:rounded-3xl"

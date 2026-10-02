@@ -4,7 +4,8 @@ import { HERO } from '../../data/conteudo'
 import { PRODUTO } from '../../config/site'
 import { surgir } from '../../lib/animacoes'
 import BotaoCTA from '../ui/BotaoCTA'
-import fotoAutor from '../../assets/lucas-barco.jpg'
+import fotoTopo from '../../assets/lucas-barco.webp'
+import fotoTopo2x from '../../assets/lucas-barco@2x.webp'
 
 /** Primeira dobra: título, chamada para compra e foto do autor. */
 export default function Hero() {
@@ -42,7 +43,10 @@ export default function Hero() {
         <motion.div {...surgir(0.15)} className="relative mx-auto w-full max-w-sm">
           <div aria-hidden className="absolute -inset-3 rounded-[2.4rem] bg-gradient-to-br from-sun/40 via-sun-rose/20 to-sky/20 blur-xl" />
           <img
-            src={fotoAutor}
+            src={fotoTopo}
+            srcSet={`${fotoTopo} 1x, ${fotoTopo2x} 2x`}
+            width={644}
+            height={875}
             alt={`${PRODUTO.autor} em ${HERO.foto.local}`}
             className="relative aspect-[5/4] w-full rounded-[2rem] border border-white/10 object-cover object-[center_80%] sm:aspect-[4/5]"
             fetchpriority="high"

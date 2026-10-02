@@ -20,7 +20,7 @@ export default function Conteudo() {
 
       <div className="mt-8 grid grid-cols-2 gap-3 sm:mt-10 sm:gap-4 lg:grid-cols-4">
         {BONUS.map(({ icone: Icone, titulo, texto }, i) => (
-          <motion.div key={titulo} {...surgir(i * 0.05)} className="rounded-3xl border border-dashed border-sun/30 bg-sun/[0.04] p-5 sm:p-6">
+          <motion.div key={titulo} {...surgir(i * 0.05)} className="rounded-xl border border-dashed border-sun/30 bg-sun/[0.04] p-5 sm:p-6">
             <p className="text-[11px] font-bold uppercase tracking-widest text-sun sm:text-xs">Bônus {i + 1}</p>
             <Icone className="mt-4 h-6 w-6 text-white" aria-hidden />
             <h3 className="mt-3 font-display text-sm font-bold sm:text-base">{titulo}</h3>

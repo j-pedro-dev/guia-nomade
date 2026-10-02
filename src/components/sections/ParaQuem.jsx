@@ -17,7 +17,7 @@ export default function ParaQuem() {
             ))}
           </ul>
         </motion.div>
-        <motion.div {...surgir(0.05)} className="rounded-3xl border border-white/[0.07] p-6 sm:p-8">
+        <motion.div {...surgir(0.05)} className="rounded-2xl border border-white/[0.07] p-6 sm:p-8">
           <h3 className="font-display text-xl font-bold text-mist">Não é pra você se…</h3>
           <ul className="mt-5 grid gap-3 text-mist">
             {PARA_QUEM.naoE.map((item) => (

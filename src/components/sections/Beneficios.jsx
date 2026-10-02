@@ -2,7 +2,8 @@ import { motion } from 'framer-motion'
 import { BENEFICIOS } from '../../data/conteudo'
 import { surgir } from '../../lib/animacoes'
 import Secao from '../ui/Secao'
-import fotoParis from '../../assets/lucas-paris.jpg'
+import fotoParis from '../../assets/lucas-paris.webp'
+import fotoParis2x from '../../assets/lucas-paris@2x.webp'
 
 /** Grade em mosaico: um card grande com foto (Paris) e seis benefícios. */
 export default function Beneficios() {
@@ -14,6 +15,7 @@ export default function Beneficios() {
           <div className="relative aspect-[4/3] md:aspect-auto md:min-h-[260px] md:flex-1">
             <img
               src={fotoParis}
+              srcSet={`${fotoParis} 1x, ${fotoParis2x} 2x`}
               alt="Lucas Melo em frente à Torre Eiffel iluminada, em Paris"
               loading="lazy"
               className="absolute inset-0 h-full w-full object-cover object-[center_70%]"
