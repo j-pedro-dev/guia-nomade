@@ -1,0 +1,30 @@
+{
+  "name": "guia-nomade",
+  "private": true,
+  "version": "1.0.0",
+  "description": "Página de vendas do ebook Manual do Nômade Digital, de Lucas Melo.",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview",
+    "build:arquivo": "vite build --mode arquivo"
+  },
+  "engines": {
+    "node": ">=18"
+  },
+  "dependencies": {
+    "framer-motion": "^13.5.0",
+    "lucide-react": "^1.50.0",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1"
+  },
+  "devDependencies": {
+    "@vitejs/plugin-react": "^4.7.0",
+    "autoprefixer": "^10.6.1",
+    "postcss": "^8.5.28",
+    "tailwindcss": "^3.4.19",
+    "vite": "^5.4.21",
+    "vite-plugin-singlefile": "^2.3.3"
+  }
+}

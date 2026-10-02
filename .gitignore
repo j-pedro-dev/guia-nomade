@@ -1,0 +1,7 @@
+node_modules
+dist
+dist-arquivo
+dist-single
+.vercel
+.DS_Store
+*.log
