@@ -5,7 +5,7 @@ import { PRODUTO } from '../../config/site'
 import { surgir } from '../../lib/animacoes'
 import Secao from '../ui/Secao'
 import Rotulo from '../ui/Rotulo'
-import fotoAutor from '../../assets/lucas.jpg'
+import fotoAutor from '../../assets/lucas-brasil.jpg'
 
 /** Apresentação de quem escreveu o ebook. */
 export default function Autor() {
@@ -16,7 +16,7 @@ export default function Autor() {
           src={fotoAutor}
           alt={PRODUTO.autor}
           loading="lazy"
-          className="aspect-square w-28 rounded-full object-cover sm:w-full sm:max-w-[260px] sm:rounded-3xl"
+          className="aspect-square w-28 rounded-full object-cover object-[center_25%] sm:w-full sm:max-w-[260px] sm:rounded-3xl"
         />
         <div>
           <Rotulo>Quem escreveu</Rotulo>

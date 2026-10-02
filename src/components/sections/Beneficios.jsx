@@ -2,7 +2,7 @@ import { motion } from 'framer-motion'
 import { BENEFICIOS } from '../../data/conteudo'
 import { surgir } from '../../lib/animacoes'
 import Secao from '../ui/Secao'
-import fotoAutor from '../../assets/lucas.jpg'
+import fotoParis from '../../assets/lucas-paris.jpg'
 
 /** Grade em mosaico: um card grande com foto e seis benefícios. */
 export default function Beneficios() {
@@ -10,7 +10,7 @@ export default function Beneficios() {
     <Secao id="metodo" rotulo="O que muda" titulo="Seu escritório cabe numa mochila.">
       <div className="grid grid-cols-2 gap-3 sm:gap-4 md:grid-cols-3">
         <motion.div {...surgir()} className="card relative col-span-2 flex min-h-[240px] flex-col justify-end overflow-hidden p-6 sm:min-h-[280px] sm:p-8 md:col-span-1 md:row-span-3">
-          <img src={fotoAutor} alt="" className="absolute inset-0 h-full w-full object-cover opacity-40" />
+          <img src={fotoParis} alt="" className="absolute inset-0 h-full w-full object-cover object-[center_35%] opacity-60" />
           <div className="absolute inset-0 bg-gradient-to-t from-night via-night/70 to-transparent" />
           <p className="relative font-display text-xl font-bold leading-snug sm:text-2xl">
             Um notebook, internet e uma habilidade que o mercado paga.

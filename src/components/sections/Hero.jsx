@@ -4,7 +4,7 @@ import { HERO } from '../../data/conteudo'
 import { PRODUTO } from '../../config/site'
 import { surgir } from '../../lib/animacoes'
 import BotaoCTA from '../ui/BotaoCTA'
-import fotoAutor from '../../assets/lucas.jpg'
+import fotoAutor from '../../assets/lucas-barco.jpg'
 
 /** Primeira dobra: título, chamada para compra e foto do autor. */
 export default function Hero() {
@@ -44,7 +44,7 @@ export default function Hero() {
           <img
             src={fotoAutor}
             alt={`${PRODUTO.autor} em ${HERO.foto.local}`}
-            className="relative aspect-[5/4] w-full rounded-[2rem] border border-white/10 object-cover object-[center_30%] sm:aspect-[4/5]"
+            className="relative aspect-[5/4] w-full rounded-[2rem] border border-white/10 object-cover object-[center_80%] sm:aspect-[4/5]"
             fetchpriority="high"
           />
           <div className="absolute bottom-4 left-4 rounded-2xl border border-white/10 bg-night/85 px-4 py-3 backdrop-blur sm:-left-10 sm:bottom-8">

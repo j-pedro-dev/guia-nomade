@@ -23,7 +23,7 @@ export const HERO = {
   ctaPrincipal: 'Quero sair do 9 às 18',
   ctaSecundario: 'Ver o que tem dentro',
   garantias: ['Acesso imediato', 'Garantia de 7 dias', 'Atualizações incluídas'],
-  foto: { legenda: 'Escritório de hoje', local: 'Barcelona, Espanha' },
+  foto: { legenda: 'Escritório de hoje', local: 'Algarve, Portugal' },
 }
 
 export const DORES = [

@@ -51,7 +51,9 @@ guia-nomade/
 │   ├── lib/
 │   │   └── animacoes.js       # Animação padrão de entrada
 │   ├── assets/
-│   │   └── lucas.jpg          # Foto do autor
+│   │   ├── lucas-barco.jpg    # Foto do topo (Hero)
+│   │   ├── lucas-paris.jpg    # Fundo do card "Seu escritório cabe numa mochila"
+│   │   └── lucas-brasil.jpg   # Foto da seção do autor
 │   └── components/
 │       ├── Cabecalho.jsx      # Barra de navegação do topo
 │       ├── BarraMobile.jsx    # Barra fixa com preço no celular
@@ -91,7 +93,7 @@ Todos os botões de compra, a barra do celular e o card de oferta passam a usar 
 
 **Textos:** todos ficam em `src/data/conteudo.js`, separados por seção (`HERO`, `DORES`, `BENEFICIOS`, `MODULOS`, `FAQ` etc.). Os títulos de "Conteúdo" contam os módulos e bônus automaticamente.
 
-**Foto do autor:** substitua `src/assets/lucas.jpg` por outra imagem com o mesmo nome. Para o link compartilhado, troque também `public/og-image.jpg` (ideal: 1200×630).
+**Fotos do Lucas:** ficam em `src/assets/` (`lucas-barco.jpg` no topo, `lucas-paris.jpg` no card de benefícios, `lucas-brasil.jpg` na seção do autor). Substitua por outra imagem com o mesmo nome. Para o link compartilhado, troque também `public/og-image.jpg` (ideal: 1200×630).
 
 **Cores e fontes:** em `tailwind.config.js`. O degradê dos botões e títulos fica em `src/index.css` (`.bg-sunset` e `.text-sunset`).
 
